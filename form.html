@@ -1,0 +1,131 @@
+<!Doctype html>
+<html>
+<head>
+     <title>Registration Form</title>
+    <link rel="stylesheet" href="new.css" type="text/css">
+
+</head>
+
+
+<body>
+<div class="rg-box">
+<img src="STP.jpg" class="STP">
+
+<h1>STP'19 Members Recruitment</h1>
+<form  action="#" onsubmit="return myFunction();" class="bg-light" method="post">
+    
+Full Name : <input type="text" autocomplete="off" id="name" class="form-control" placeholder="Your answer">
+    <br>
+    
+Age : <input type="text" id="age" autocomplete="off" placeholder="Your answer"><br>
+    
+Mobile Number :
+<input type="tel" id="number" autocomplete="off" placeholder="Your answer"><br>
+    
+Active E-mail : <input type="email" autocomplete="off" id="mail" placeholder="Your answer"><br>
+    
+University : <input type="text" id="un" autocomplete="off" placeholder="Your answer"><br>
+    
+Faculty : <input type="text" id="faculty" autocomplete="off" placeholder="Your answer"><br>
+    
+Major : <input type="text" id="major"autocomplete="off" placeholder="Your answer"><br>
+    
+Acadmic Year : <br>
+ <select required id ="select" onchange="ValidateSelect('select')">
+  <option value="">Select number</option>
+  <option value="1st">1st</option>
+  <option value="2nd">2nd</option>
+  <option value="3rd">3rd</option>
+  <option value="4th">4th</option>
+</select><br>
+
+
+ Your previous experience <br>
+<textarea rows="4" cols="50" name="comment"  required>
+</textarea><br>
+    
+First preference : <select required >
+  <option value="">Select Your first preference</option>
+  <option value="Engineering">Engineering</option>
+  <option value="Management">Management</option>
+  <option value="Juniors">Juniors</option>
+  <option value="Publications">Publications</option>
+  <option value="Information Technology(IT)">Information Technology(IT)</option>
+  <option value="Media & Photography">Media & Photography</option>
+  <option value="Fund-Raising(FR)">Fund-Raising(FR)</option>
+  <option value="Marketing">Marketing</option>
+  <option value="Logistics">Logistics</option>
+  <option value="Decoration, Coordination and Reception(DCR)">Decoration, Coordination and Reception(DCR)</option>
+  <option value="Public Relations(PR)">Public Relations(PR)</option>
+  <option value="Human Resources(HR)">Human Resources(HR)</option>
+  <option value="Quality & Development(Q&D)">Quality & Development(Q&D)</option>
+</select><br>
+
+   Second preference : <select required>
+  <option value="">Select Your second preference</option>
+  <option value="Engineering">Engineering</option>
+  <option value="Management">Management</option>
+  <option value="Juniors">Juniors</option>
+  <option value="Publications">Publications</option>
+  <option value="Information Technology(IT)">Information Technology(IT)</option>
+  <option value="Media & Photography">Media & Photography</option>
+  <option value="Fund-Raising(FR)">Fund-Raising(FR)</option>
+  <option value="Marketing">Marketing</option>
+  <option value="Logistics">Logistics</option>
+  <option value="Decoration, Coordination and Reception(DCR)">Decoration, Coordination and Reception(DCR)</option>
+  <option value="Public Relations(PR)">Public Relations(PR)</option>
+  <option value="Human Resources(HR)">Human Resources(HR)</option>
+  <option value="Quality & Development(Q&D)">Quality & Development(Q&D)</option>
+</select><br>
+    
+
+<input type="submit" value="submit" name="submit">   
+ <p id="demo"></p>
+</form>
+
+</div>
+<script type="text/javascript">
+    function myFunction (){
+        var name = document.getElementById('name').value;
+        var mail = document.getElementById('mail').value;
+        var age = document.getElementById('age').value;
+        var number = document.getElementById('number').value;
+        var University = document.getElementById('un').value;
+        var Faculty =document.getElementById('faculty').value;
+        var major = document.getElementById('major').value;
+        if (name == ''|| mail =='' || age == '' || number == ''|| University =='' || Faculty == '' || major =='' ){
+            alert('Please complete all fields ');
+            return false;
+        }
+        else if (name.length<5){
+            alert('Your full-name must be at least 5 characters');
+            return false;
+        }
+       
+        else if (isNaN(age)||age.indexOf(" ")!=-1)
+           {
+              alert("Enter numeric value at age")
+              return false; 
+           }
+        else if (isNaN(number)||number.indexOf(" ")!=-1 || number.length !=11)
+           {
+                alert("Enter a valid phone number");
+                return false;
+           }
+
+        else  if (number.charAt(1)!="0" && number.charAt(2)!="1")
+           {
+                alert("Phone number should start with 01");
+                return false
+           }
+        
+        else {return true;}
+     
+        
+        
+        
+    }
+    
+    </script>
+</body>		
+</html>
